@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4a1021">
+  <meta name="description" content="Анамыздың 50 жас мерейтойына арналған шақырту">
+  <title>Анамыздың 50 жас мерейтойы · Шақырту</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%234a1021'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia' font-size='34' fill='%23e4c88e'%3E50%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @font-face{font-family:'AsylbekShelley';src:url('./AsylbekM02Shelley.kz.ttf') format('truetype');font-weight:normal;font-style:normal}
+    :root{color-scheme:light;--wine:#4a1021;--ink:#48272a;--gold:#a88755;--paper:#f4ebdb}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% 25%,#733043,var(--wine) 60%,#270913);color:var(--ink);font:400 16px/1.65 'Noto Serif',Georgia,serif}button{font:inherit}
+    .stage{min-height:100svh;display:flex;align-items:flex-start;justify-content:center;padding:20px 16px 36px}
+    .card-wrap{position:relative;width:min(100%,580px);height:calc(100svh - 54px);border-radius:20px;box-shadow:0 24px 80px #18050d95,0 0 0 1px #dfb99070,0 40px 120px 20px #18050dbb,0 8px 40px 4px #4a102155;isolation:isolate}
+.card-overlay{position:absolute;bottom:0;left:0;right:0;height:320px;background:var(--paper) url('./envelope-bg.webp') center bottom/100% calc(100svh - 54px) no-repeat;border-radius:0 0 20px 20px;z-index:2;pointer-events:none;transform:translateZ(0);-webkit-transform:translateZ(0);clip-path:url(#envClip);-webkit-clip-path:url(#envClip)}
+    .card-bg{position:absolute;inset:0;background:var(--paper) url('./envelope-bg.webp') center center/100% 100% no-repeat;border-radius:20px;z-index:0;pointer-events:none}
+    .card{width:100%;height:100%;position:relative;overflow-y:scroll;overflow-x:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:transparent;text-align:center;z-index:1;}
+    .card::-webkit-scrollbar{display:none}.card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#f8f0e000 0%,#f8f0e010 57%,#f8f0e000 72%);z-index:-1;pointer-events:none}
+    .envelope-header{padding:30px 39px 0;margin:0;text-align:center}.envelope-header .age{display:block;line-height:0.78;overflow:hidden;margin:0 auto}
+    .content{position:relative;z-index:1;max-width:440px;margin:auto;padding:0 39px 275px}
+    .kicker{font:italic 400 .91rem/1.5 'Noto Serif',Georgia,serif;color:#74484d;margin:0 0 9px}.age{margin:0 auto;font:400 clamp(5rem,22vw,9rem)/1 'AsylbekShelley','Noto Serif',Georgia,serif;color:var(--wine);letter-spacing:.02em}.age-num{font-size:2em}h1{font:400 clamp(2rem,7vw,3.1rem)/1.35 'AsylbekShelley','Noto Serif',Georgia,serif;color:var(--wine);margin:0 auto 15px;max-width:350px}.rule{display:flex;align-items:center;gap:12px;color:var(--gold);font:1rem Georgia,serif;max-width:148px;margin:17px auto 17px}.rule:before,.rule:after{content:"";height:1px;background:#a88755a8;flex:1}
+    .greeting{font:500 clamp(.94rem,2.7vw,1.05rem)/1.65 'Noto Serif',Georgia,serif;margin:0 auto 10px;max-width:340px}.copy{font:400 clamp(.88rem,2.5vw,.98rem)/1.65 'Noto Serif',Georgia,serif;margin:0 auto;max-width:365px}.family{font:400 1.5rem/1.5 'AsylbekShelley','Noto Serif',Georgia,serif;color:#74484d;margin:13px auto 0}
+    .details{margin:20px auto 0;max-width:320px}.detail{padding:6px 0}.detail-label{font:400 1.1rem/1.4 'AsylbekShelley','Noto Serif',Georgia,serif;letter-spacing:.02em;color:#815459;margin:0 0 5px}.detail-label::before{content:none}.detail-value{font:400 1.04rem/1.5 'Noto Serif',Georgia,serif;margin:0}
+    .music-wrap{position:fixed;bottom:26px;right:max(24px,calc((100vw - 580px)/2 + 16px));z-index:5;width:88px;height:88px;display:flex;align-items:center;justify-content:center}.music-ring{position:absolute;inset:0;width:100%;height:100%;animation:ring-spin 18s linear infinite;pointer-events:none}.music{position:relative;display:flex;align-items:center;border:1px solid #c6a66f;border-radius:50%;background:#fff9eeed;backdrop-filter:blur(8px);color:var(--wine);width:44px;height:44px;padding:0;justify-content:center;font:600 .72rem Manrope,Arial,sans-serif;cursor:pointer;box-shadow:0 6px 20px #26051040}.music:focus-visible{outline:3px solid #c4a065;outline-offset:3px}.note{font-size:1.2rem;line-height:1}@keyframes ring-spin{to{transform:rotate(360deg)}}
+    .content>*{animation:rise .75s ease both}.content>*:nth-child(2){animation-delay:.08s}.content>*:nth-child(3){animation-delay:.16s}.content>*:nth-child(4){animation-delay:.23s}.content>*:nth-child(n+5){animation-delay:.3s}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+    @media(max-width:650px){.stage{min-height:100svh;padding:20px 12px 28px;background:radial-gradient(ellipse at 50% 38%,#733043,var(--wine) 68%,#270913)}.card-wrap{width:100%;height:calc(100svh - 44px);border-radius:18px;transform:perspective(900px) translateZ(0);box-shadow:0 2px 6px #18050dcc,0 12px 28px #18050db0,0 32px 64px #18050d99,0 64px 120px 24px #18050d88,0 0 0 1px #dfb99055,inset 0 1px 0 #fff6e055,inset 0 -1px 0 #18050d30;filter:drop-shadow(0 4px 32px #18050dcc)}.card-bg{border-radius:18px}.card-overlay{height:320px;background:var(--paper) url('./envelope-bg.webp') center bottom/100% calc(100svh - 44px) no-repeat;border-radius:0 0 18px 18px;clip-path:url(#envClip);-webkit-clip-path:url(#envClip)}.card{border-radius:18px;height:100%;overflow-y:scroll;overflow-x:hidden}.music-wrap{bottom:22px;right:22px}.envelope-header{padding:30px 24px 0}.content{padding:0 24px 275px;max-width:100%;overflow-wrap:break-word;word-break:break-word}h1{margin:0 auto 9px;line-height:1.25}.rule{margin-bottom:10px}.greeting{line-height:1.5;margin-bottom:6px}.copy{line-height:1.5}.family{margin-top:9px}.details{margin-top:13px}.detail{padding:3px 0}.detail-label{margin-bottom:3px}.detail-value{font-size:.98rem;line-height:1.4}}
+    @media(max-width:390px){.content{padding:0 18px 275px}h1{font-size:1.3rem}.greeting{font-size:.9rem}.copy{font-size:.84rem}.details{margin-top:11px}.detail{padding:2px 0}}
+    @media(prefers-reduced-motion:reduce){.content>*{animation:none}}
+    .calendar-section{margin:24px auto 0;max-width:300px;text-align:center}
+    .calendar-title{font:400 1rem/1.3 'Noto Serif',Georgia,serif;color:var(--wine);margin:0 0 3px;text-transform:uppercase;letter-spacing:.1em}
+    .calendar-subtitle{font:400 1.4rem/1.4 'AsylbekShelley','Noto Serif',Georgia,serif;color:#815459;margin:0 0 14px;letter-spacing:.02em}
+    .calendar-weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin:0 0 3px}
+    .calendar-weekdays>div{font:600 .58rem/1 'Noto Sans',Arial,sans-serif;color:var(--gold);padding:3px 0;text-align:center}
+    .calendar-days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+    .calendar-days>div{font:400 .78rem/1 'Noto Sans',Arial,sans-serif;color:var(--ink);display:flex;align-items:center;justify-content:center;aspect-ratio:1;border-radius:50%}
+    .birthday-cell{background:var(--wine);color:var(--paper)!important;font-weight:700!important;animation:cell-beat 1.4s ease-in-out infinite}
+    @keyframes cell-beat{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+    .time-block{margin:18px 0 0;padding-top:14px;border-top:1px solid #a8875540}
+    .time-title{font:400 1.1rem/1 'AsylbekShelley','Noto Serif',Georgia,serif;letter-spacing:.02em;color:#815459;margin:0 0 5px}
+    .time-value{font:400 2rem/1 'Noto Serif',Georgia,serif;color:var(--wine)}
+    .countdown-section{margin:18px 0 0}
+    .countdown-title{font:400 1.1rem/1 'AsylbekShelley','Noto Serif',Georgia,serif;letter-spacing:.02em;color:#815459;margin:0 0 12px}
+    .timer-container{display:flex;justify-content:center;gap:8px}
+    .timer-item{display:flex;flex-direction:column;align-items:center;gap:5px}
+    .timer-card{background:var(--wine);border-radius:8px;width:58px;height:52px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px #4a102135}
+    .timer-card span{font:400 1.6rem/1 'Noto Serif',Georgia,serif;color:var(--paper)}
+    .timer-label{font:600 .55rem/1 'Noto Sans',Arial,sans-serif;color:#815459;text-transform:uppercase;letter-spacing:.1em}
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden">
+    <defs>
+      <clipPath id="envClip" clipPathUnits="objectBoundingBox">
+        <path d="M 0,0 L 0.05,0 C 0.25,0 0.34,0.35 0.5,0.35 C 0.66,0.35 0.75,0 0.95,0 L 1,0 L 1,1 L 0,1 Z"/>
+      </clipPath>
+    </defs>
+  </svg>
+  <div class="music-wrap">
+    <svg class="music-ring" viewBox="0 0 88 88" aria-hidden="true">
+      <defs><path id="textTrack" d="M 44,44 m -32,0 a 32,32 0 1,1 64,0 a 32,32 0 1,1 -64,0"/></defs>
+      <text fill="#a88755" font-family="'Noto Sans',Arial,sans-serif" font-size="7.5" letter-spacing="2">
+        <textPath href="#textTrack" startOffset="50%" text-anchor="middle">Әуенді қосу</textPath>
+      </text>
+    </svg>
+    <button class="music" type="button" id="music" aria-label="Әуенді қосу" aria-pressed="false"><span class="note" aria-hidden="true">♫</span></button>
+  </div>
+  <main class="stage">
+    <div class="card-wrap">
+    <div class="card-bg" aria-hidden="true"></div>
+    <div class="card-overlay" aria-hidden="true"></div>
+    <article class="card" aria-label="Анамыздың 50 жас мерейтойына шақырту">
+      <div class="envelope-header">
+        <p class="age"><span class="age-num">50</span> жас</p>
+      </div>
+      <div class="content">
+        <h1>Анамыздың мерейтойы</h1>
+        <div class="rule" aria-hidden="true">✦</div>
+        <p class="greeting">Қадірлі қонақ!</p>
+        <p class="copy">Сізді аяулы анамыздың 50 жас мерейтойына шақырамыз. Келіп, қуанышымызға ортақ болсаңыз, біз үшін үлкен мәртебе.</p>
+        <p class="family">Ізгі тілекпен, балалары мен отбасы</p>
+        <div class="rule" aria-hidden="true">✦</div>
+        <div class="calendar-section">
+          <h2 class="calendar-title">Мерейтой</h2>
+          <div class="calendar-subtitle">10 қазан 2026 жыл</div>
+          <div class="calendar-weekdays">
+            <div>ДС</div><div>СС</div><div>СР</div><div>БС</div><div>ЖМ</div><div>СН</div><div>ЖБ</div>
+          </div>
+          <div class="calendar-days">
+            <div></div><div></div><div></div>
+            <div>1</div><div>2</div><div>3</div><div>4</div>
+            <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div class="birthday-cell">10</div><div>11</div>
+            <div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div>
+            <div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div>
+            <div>26</div><div>27</div><div>28</div><div>29</div><div>30</div><div>31</div>
+          </div>
+          <div class="time-block">
+            <div class="time-title">Басталуы</div>
+            <div class="time-value">19:00</div>
+          </div>
+          <div class="countdown-section">
+            <div class="countdown-title">Мерейтойға дейін</div>
+            <div class="timer-container">
+              <div class="timer-item"><div class="timer-card"><span id="days">00</span></div><span class="timer-label">күн</span></div>
+              <div class="timer-item"><div class="timer-card"><span id="hours">00</span></div><span class="timer-label">сағат</span></div>
+              <div class="timer-item"><div class="timer-card"><span id="minutes">00</span></div><span class="timer-label">минут</span></div>
+              <div class="timer-item"><div class="timer-card"><span id="seconds">00</span></div><span class="timer-label">секунд</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="rule" aria-hidden="true">✦</div>
+        <div class="details" aria-label="Той туралы мәлімет">
+          <div class="detail"><p class="detail-label">Мекен жайымыз</p><p class="detail-value">Арай Холл банкет залы</p></div>
+        </div>
+      </div>
+    </article>
+    </div>
+  </main>
+  <script>
+    (()=>{
+      const button = document.getElementById('music');
+      const audio = new Audio('./andriih-happy-birthday-575820.mp3');
+      audio.loop = true;
+
+      function stop() {
+        audio.pause();
+        audio.currentTime = 0;
+        button.setAttribute('aria-pressed','false');
+        button.setAttribute('aria-label','Әуенді қосу');
+        button.querySelector('.note').textContent = '♫';
+      }
+
+      button.addEventListener('click', async () => {
+        if (!audio.paused) { stop(); return; }
+        try {
+          await audio.play();
+          button.setAttribute('aria-pressed','true');
+          button.setAttribute('aria-label','Әуенді өшіру');
+          button.querySelector('.note').textContent = '♪';
+        } catch(e) {}
+      });
+
+      document.addEventListener('visibilitychange', ()=>{ if(document.hidden && !audio.paused) stop(); });
+    })();
+
+
+    (()=>{
+      const target = new Date('2026-10-10T19:00:00');
+      const els = { days: document.getElementById('days'), hours: document.getElementById('hours'), minutes: document.getElementById('minutes'), seconds: document.getElementById('seconds') };
+      function pad(n){ return String(n).padStart(2,'0'); }
+      function tick(){
+        const diff = target - Date.now();
+        if(diff <= 0){ els.days.textContent=els.hours.textContent=els.minutes.textContent=els.seconds.textContent='00'; return; }
+        els.days.textContent    = pad(Math.floor(diff/86400000));
+        els.hours.textContent   = pad(Math.floor(diff%86400000/3600000));
+        els.minutes.textContent = pad(Math.floor(diff%3600000/60000));
+        els.seconds.textContent = pad(Math.floor(diff%60000/1000));
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+</body>
+</html>
