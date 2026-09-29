@@ -20,9 +20,9 @@
     .card-bg{position:absolute;inset:0;background:var(--paper) url('./envelope-bg.webp') center center/100% 100% no-repeat;border-radius:20px;z-index:0;pointer-events:none}
     .card{width:100%;height:100%;position:relative;overflow-y:scroll;overflow-x:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:transparent;text-align:center;z-index:1;}
     .card::-webkit-scrollbar{display:none}.card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#f8f0e000 0%,#f8f0e010 57%,#f8f0e000 72%);z-index:-1;pointer-events:none}
-    .envelope-header{padding:30px 39px 0;margin:0;text-align:center}.envelope-header .age{display:block;line-height:0.78;overflow:hidden;margin:0 auto}
+    .envelope-header{padding:30px 39px 0;margin:0;text-align:center}.envelope-header .age{display:block;line-height:0.78;overflow:hidden;margin:0 auto}.envelope-header>*{animation:rise 1s ease both}.envelope-header>*:nth-child(1){animation-delay:.1s}.envelope-header>*:nth-child(2){animation-delay:.35s}.envelope-header>*:nth-child(3){animation-delay:.6s}.age-invite{font:400 clamp(2.3rem,9vw,3.1rem)/1.4 'AsylbekShelley','Noto Serif',Georgia,serif;color:var(--wine);margin:16px 0 2px}.age-name{font:400 clamp(3.5rem,14vw,5.5rem)/1.1 'AsylbekShelley','Noto Serif',Georgia,serif;color:var(--wine);margin:0 0 2px}
     .content{position:relative;z-index:1;max-width:440px;margin:auto;padding:0 39px 275px}
-    .kicker{font:italic 400 .91rem/1.5 'Noto Serif',Georgia,serif;color:#74484d;margin:0 0 9px}.age{margin:0 auto;font:400 clamp(5rem,22vw,9rem)/1 'AsylbekShelley','Noto Serif',Georgia,serif;color:var(--wine);letter-spacing:.02em}.age-num{font-size:2em}h1{font:400 clamp(2rem,7vw,3.1rem)/1.35 'AsylbekShelley','Noto Serif',Georgia,serif;color:var(--wine);margin:0 auto 15px;max-width:350px}.rule{display:flex;align-items:center;gap:12px;color:var(--gold);font:1rem Georgia,serif;max-width:148px;margin:17px auto 17px}.rule:before,.rule:after{content:"";height:1px;background:#a88755a8;flex:1}
+    .kicker{font:italic 400 .91rem/1.5 'Noto Serif',Georgia,serif;color:#74484d;margin:0 0 9px}.age{margin:0 auto;font:400 clamp(5rem,22vw,9rem)/1 'AsylbekShelley','Noto Serif',Georgia,serif;color:var(--wine);letter-spacing:.02em}.age-num{font-size:1em}h1{font:400 clamp(2rem,7vw,3.1rem)/1.35 'AsylbekShelley','Noto Serif',Georgia,serif;color:var(--wine);margin:0 auto 15px;max-width:350px}.rule{display:flex;align-items:center;gap:12px;color:var(--gold);font:1rem Georgia,serif;max-width:148px;margin:17px auto 17px}.rule:before,.rule:after{content:"";height:1px;background:#a88755a8;flex:1}
     .greeting{font:500 clamp(.94rem,2.7vw,1.05rem)/1.65 'Noto Serif',Georgia,serif;margin:0 auto 10px;max-width:340px}.copy{font:400 clamp(.88rem,2.5vw,.98rem)/1.65 'Noto Serif',Georgia,serif;margin:0 auto;max-width:365px}.family{font:400 1.5rem/1.5 'AsylbekShelley','Noto Serif',Georgia,serif;color:#74484d;margin:13px auto 0}
     .details{margin:20px auto 0;max-width:320px}.detail{padding:6px 0}.detail-label{font:400 1.1rem/1.4 'AsylbekShelley','Noto Serif',Georgia,serif;letter-spacing:.02em;color:#815459;margin:0 0 5px}.detail-label::before{content:none}.detail-value{font:400 1.04rem/1.5 'Noto Serif',Georgia,serif;margin:0}
     .music-wrap{position:fixed;bottom:26px;right:max(24px,calc((100vw - 580px)/2 + 16px));z-index:5;width:88px;height:88px;display:flex;align-items:center;justify-content:center}.music-ring{position:absolute;inset:0;width:100%;height:100%;animation:ring-spin 18s linear infinite;pointer-events:none}.music{position:relative;display:flex;align-items:center;border:1px solid #c6a66f;border-radius:50%;background:#fff9eeed;backdrop-filter:blur(8px);color:var(--wine);width:44px;height:44px;padding:0;justify-content:center;font:600 .72rem Manrope,Arial,sans-serif;cursor:pointer;box-shadow:0 6px 20px #26051040}.music:focus-visible{outline:3px solid #c4a065;outline-offset:3px}.note{font-size:1.2rem;line-height:1}@keyframes ring-spin{to{transform:rotate(360deg)}}
@@ -74,13 +74,15 @@
     <div class="card-overlay" aria-hidden="true"></div>
     <article class="card" aria-label="Анамыздың 50 жас мерейтойына шақырту">
       <div class="envelope-header">
+        <p class="age-invite">Сіздерді аяулы анамыз</p>
+        <p class="age-name">Тәттігүлдің</p>
         <p class="age"><span class="age-num">50</span> жас</p>
       </div>
       <div class="content">
-        <h1>Анамыздың мерейтойы</h1>
+        <h1>мерейтойына шақырамыз</h1>
         <div class="rule" aria-hidden="true">✦</div>
         <p class="greeting">Қадірлі қонақ!</p>
-        <p class="copy">Сізді аяулы анамыздың 50 жас мерейтойына шақырамыз. Келіп, қуанышымызға ортақ болсаңыз, біз үшін үлкен мәртебе.</p>
+        <p class="copy">Сізді аяулы анамыздың 50 жас мерейтойына шақырамыз.<br>Келіп, қуанышымызға ортақ болсаңыз,<br>біз үшін үлкен мәртебе.</p>
         <p class="family">Ізгі тілекпен, балалары мен отбасы</p>
         <div class="rule" aria-hidden="true">✦</div>
         <div class="calendar-section">
@@ -124,6 +126,15 @@
       const button = document.getElementById('music');
       const audio = new Audio('./andriih-happy-birthday-575820.mp3');
       audio.loop = true;
+      let started = false;
+
+      function play() {
+        audio.play().then(()=>{
+          button.setAttribute('aria-pressed','true');
+          button.setAttribute('aria-label','Әуенді өшіру');
+          button.querySelector('.note').textContent = '♪';
+        }).catch(()=>{});
+      }
 
       function stop() {
         audio.pause();
@@ -133,14 +144,25 @@
         button.querySelector('.note').textContent = '♫';
       }
 
-      button.addEventListener('click', async () => {
+      // Первое касание/клик на странице — автозапуск
+      function onFirstInteraction() {
+        if (started) return;
+        started = true;
+        play();
+        document.removeEventListener('touchstart', onFirstInteraction);
+        document.removeEventListener('click', onFirstInteraction);
+      }
+      document.addEventListener('touchstart', onFirstInteraction, { once: true });
+      document.addEventListener('click', onFirstInteraction, { once: true });
+
+      // Попытка автозапуска (работает на десктопе)
+      play();
+
+      button.addEventListener('click', (e) => {
+        started = true;
+        e.stopPropagation();
         if (!audio.paused) { stop(); return; }
-        try {
-          await audio.play();
-          button.setAttribute('aria-pressed','true');
-          button.setAttribute('aria-label','Әуенді өшіру');
-          button.querySelector('.note').textContent = '♪';
-        } catch(e) {}
+        play();
       });
 
       document.addEventListener('visibilitychange', ()=>{ if(document.hidden && !audio.paused) stop(); });
